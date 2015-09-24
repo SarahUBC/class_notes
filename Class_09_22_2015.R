@@ -1,0 +1,8 @@
+library(ggplot2)
+library(gapminder)
+str(gapminder)
+p  <- ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
+p + geom_point()
+p  <- ggplot(data = gapminder, aes(x = log10(gdpPercap), y = lifeExp))
+p + geom_point() + scale_x_log10()
+p + geom_point(aes(color = continent)) + scale_x_log10()
